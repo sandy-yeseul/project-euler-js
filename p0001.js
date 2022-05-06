@@ -11,32 +11,23 @@
  */
 
 export default function findSum(max){
-    console.time('P0001')
-    // find sum of multiple 3
+    console.time(max.toString())
+    // find sum of multiple 3, 5 and 15(for substracting duplicates)
     let i = 0;
     let sumOf3 = 0;
-    while(i < max){
-        if(i%3 ===0) sumOf3 = sumOf3 + i
-        i++;
-    }
-
-    // find sum of multiple 5
-    i = 0;
     let sumOf5 = 0;
-    while(i < max){
-        if(i % 5 === 0) sumOf5 = sumOf5 + i;
-        i++;
-    }
-
-    // find sum of multiple 15 - for substracting duplicates
-    i = 0;
     let sumOf15 = 0;
     while(i < max){
-        if(i % 15 === 0) sumOf15 = sumOf15 + i;
+        if(i % 3 === 0) sumOf3 = sumOf3 + i
+
+        else if(i % 5 === 0) sumOf5 = sumOf5 + i
+
+        else if(i % 15 === 0) sumOf15 = sumOf15 + i
+
         i++;
     }
 
-    console.timeEnd('P0001')
+    console.timeEnd(max.toString())
 
     return sumOf3 + sumOf5 - sumOf15
 }
