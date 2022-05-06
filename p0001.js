@@ -15,19 +15,17 @@ export default function findSum(max){
     let i = 0;
     let sumOf3 = 0;
     while(i < max){
-        if(i%3 ===0) sumOf3 = +i;
+        if(i%3 ===0) sumOf3 = sumOf3 + i
         i++;
     }
-    console.log(`sum of 3: ${sumOf3}`)
 
     // find sum of multiple 5
     i = 0;
     let sumOf5 = 0;
     while(i < max){
-        if(i % 5 === 0) sumOf5 = +i;
+        if(i % 5 === 0) sumOf5 = sumOf5 + i;
         i++;
     }
-    console.log(`sum of 5: ${sumOf5}`)
 
     return sumOf3 + sumOf5
 }
