@@ -19,7 +19,7 @@ export default function sumEvenValues(max){
     while(prev < max){
         const next = prev + cur;
 
-        if(cur % 2 !== 0 && cur < max) sum += cur;
+        if(cur % 2 !== 0) sum += cur;
 
         prev = cur;
         cur = next;
