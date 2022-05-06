@@ -14,17 +14,15 @@ export default function findSum(max){
     console.time(max.toString())
     // find sum of multiple 3, 5 and 15(for substracting duplicates)
     let i = 0;
-    let sumOf3 = 0;
-    let sumOf5 = 0;
+    let sum = 0;
     while(i < max){
-        if(i % 3 === 0) sumOf3 = sumOf3 + i
-
-        else if(i % 5 === 0 && i % 15 !== 0) sumOf5 = sumOf5 + i
+        if(i % 3 === 0 || (i % 5 === 0 && i % 15 !== 0)) 
+            sum = sum + i
 
         i++;
     }
 
     console.timeEnd(max.toString())
 
-    return sumOf3 + sumOf5
+    return sum
 }
