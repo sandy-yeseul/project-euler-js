@@ -10,6 +10,20 @@
  * find the sum of the even-valued terms.
  */
 
-export default function sumEvenValues(){
+export default function sumEvenValues(max){
+    console.time(`p0002: max ${max}`)
+    let sum = 0;
+    let i = 0, j = i + 1;
 
+    while(i < max){
+        const fib = i + j;
+
+        if(fib % 2 !== 0) sum += fib;
+
+        i = j;
+        j = fib;
+    }
+
+    console.timeEnd(`p0002: max ${max}`)
+    return sum;
 }
