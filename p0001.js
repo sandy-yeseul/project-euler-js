@@ -15,14 +15,14 @@ export default function findSum(max){
 
     max = parseInt(max)
     // find sum of multiple 3, 5 and 15(for substracting duplicates)
+    let i = 0;
     let sum = 0;
-    const arr = []
-    arr.length = max
-    arr.fill(0)
-    arr.forEach((v, i) => {
+    while(i < max){
         if(i % 3 === 0 || (i % 5 === 0 && i % 15 !== 0)) 
             sum = sum + i
-    })
+
+        i++;
+    }
 
     console.timeEnd(max.toString())
 
