@@ -14,11 +14,11 @@ export default function findSum(max){
     console.time(max.toString())
 
     max = parseInt(max)
-    // find sum of multiple 3, 5 and 15(for substracting duplicates)
+    // find sum of multiple 3 and 5
     let i = 0;
     let sum = 0;
     while(i < max){
-        if(i % 3 === 0 || (i % 5 === 0 && i % 15 !== 0)) 
+        if(i % 3 === 0 || i % 5 === 0) 
             sum = sum + i
 
         i++;
