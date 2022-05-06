@@ -16,18 +16,15 @@ export default function findSum(max){
     let i = 0;
     let sumOf3 = 0;
     let sumOf5 = 0;
-    let sumOf15 = 0;
     while(i < max){
         if(i % 3 === 0) sumOf3 = sumOf3 + i
 
-        else if(i % 5 === 0) sumOf5 = sumOf5 + i
-
-        else if(i % 15 === 0) sumOf15 = sumOf15 + i
+        else if(i % 5 === 0 && i % 15 !== 0) sumOf5 = sumOf5 + i
 
         i++;
     }
 
     console.timeEnd(max.toString())
 
-    return sumOf3 + sumOf5 - sumOf15
+    return sumOf3 + sumOf5
 }
