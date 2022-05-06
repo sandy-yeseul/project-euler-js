@@ -12,17 +12,17 @@
 
 export default function sumEvenValues(max){
     console.time(`p0002: max ${max}`)
+
     let sum = 0;
-    let i = 0, j = i + 1;
+    let prev = 0, cur = 1;
 
-    while(j < max){
-        const fib = i + j;
-        console.log(fib)
+    while(prev < max){
+        const next = prev + cur;
 
-        if(i % 2 !== 0 && i < max) sum += i;
+        if(cur % 2 !== 0 && cur < max) sum += cur;
 
-        i = j;
-        j = fib;
+        prev = cur;
+        cur = next;
     }
 
     console.timeEnd(`p0002: max ${max}`)
