@@ -27,5 +27,13 @@ export default function findSum(max){
         i++;
     }
 
-    return sumOf3 + sumOf5
+    // find sum of multiple 15
+    i = 0;
+    let sumOf15 = 0;
+    while(i < max){
+        if(i % 15 === 0) sumOf15 = sumOf15 + i;
+        i++;
+    }
+
+    return sumOf3 + sumOf5 - sumOf15
 }
