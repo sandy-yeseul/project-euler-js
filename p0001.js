@@ -14,7 +14,7 @@ export default function findSum(max){
     // find sum of multiple 3
     let i = 0;
     let sumOf3 = 0;
-    while(i===max){
+    while(i <= max){
         if(i%3 ===0) sumOf3++;
         i++;
     }
@@ -22,7 +22,7 @@ export default function findSum(max){
     // find sum of multiple 5
     i = 0;
     let sumOf5 = 0;
-    while(i===max){
+    while(i <= max){
         if(i % 5 === 0) sumOf5++;
         i++;
     }
