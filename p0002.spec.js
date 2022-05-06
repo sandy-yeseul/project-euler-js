@@ -6,4 +6,9 @@ describe("p 0002 testing", ()=>{
         const sum = sumEvenValues(20)
         expect(22)
     })
+
+    it("should sum up to 100", ()=>{
+        const sum = sumEvenValues(100)
+        console.log(sum)
+    })
 })
