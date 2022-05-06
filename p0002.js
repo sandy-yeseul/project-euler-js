@@ -16,9 +16,11 @@ export default function sumEvenValues(max){
     let i = 0, j = i + 1;
 
     while(j < max){
-        if(j >= max) break;
         const fib = i + j;
         console.log(fib)
+
+        
+        if(fib >= max) break;
 
         if(fib % 2 !== 0) sum += fib;
 
