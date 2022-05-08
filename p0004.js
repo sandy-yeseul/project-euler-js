@@ -7,7 +7,7 @@
  * Find the largest palindrome made from the product of two 3-digit numbers.
  */
 
-export default function findPalindrome(digit){
+export function findPalindrome(digit){
     const max = parseInt(Array(digit).fill(9).join('')),
     min = parseInt(`1${Array(digit -1).fill(0).join('')}`)
     
@@ -34,4 +34,18 @@ export default function findPalindrome(digit){
         else num2 += -1;
     }
     return palindrome;
+}
+
+export function verifyPalindrome(num){
+    let arr = num.toString().split("");
+
+    while(temp.length <2){
+        if(temp.length < 2){
+            return true;
+        }
+        let first = arr.shift(), last = arr.pop();
+        
+        if(first !== last) break;
+    }
+    return false;
 }
