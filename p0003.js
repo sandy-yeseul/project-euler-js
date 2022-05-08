@@ -8,28 +8,13 @@
  * In simple words, 
  * prime factor is finding which prime numbers multiply together to make the original number.
  */
-
-function findPrimeFactors(num){
-    const pFactors = [];
-
+export default function getLargestPF(num){
     let cur = 2;
 
     while(cur < num){
-        if(num % cur === 0) {
-            pFactors.push(cur)
-            num = num / cur;
-        }
+        if(num % cur === 0) num = num / cur;
         cur++;
     }
 
-    pFactors.push(num)
-
-    return pFactors;
-}
-export default function getLargestPF(num){
-    const primeFactors = findPrimeFactors(num);
-
-    const sorted = primeFactors.reverse();
-
-    return sorted[0]
+    return num
 }

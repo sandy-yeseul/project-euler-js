@@ -8,6 +8,6 @@ describe("testing for p 3", ()=>{
     })
     it("should return largest prime factor for 600851475143", ()=>{
         const res = getLargestPF(600851475143)
-        console.log(res)
+        expect(res).to.be.eq(6857)
     })
 })
