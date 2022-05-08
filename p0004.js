@@ -38,14 +38,16 @@ export function findPalindrome(digit){
 
 export function verifyPalindrome(num){
     let arr = num.toString().split("");
+    let isItPalindrome = false;
 
-    while(temp.length <2){
-        if(temp.length < 2){
-            return true;
+    while(arr.length <2){
+        if(arr.length < 2){
+            isItPalindrome = true;
+            break;
         }
         let first = arr.shift(), last = arr.pop();
         
         if(first !== last) break;
     }
-    return false;
+    return isItPalindrome;
 }
