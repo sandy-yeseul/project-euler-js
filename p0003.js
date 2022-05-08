@@ -10,8 +10,22 @@
  */
 
 function findPrimeFactors(num){
-    
-}
-function getLargestPF(num){
+    const pFactors = [];
 
+    let cur = 2;
+
+    while(cur < num){
+        if(num % cur === 0) pFactors.push(cur)
+        num = num / cur;
+        cur++;
+    }
+
+    return pFactors;
+}
+export default function getLargestPF(num){
+    const primeFactors = findPrimeFactors(num);
+
+    const sorted = primeFactors.sort((a, b) => a - b).reverse();
+
+    return sorted[0]
 }
