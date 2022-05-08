@@ -29,9 +29,7 @@ function findPrimeFactors(num){
 export default function getLargestPF(num){
     const primeFactors = findPrimeFactors(num);
 
-    console.log(primeFactors)
-
-    const sorted = primeFactors.sort((a, b) => a - b).reverse();
+    const sorted = primeFactors.reverse();
 
     return sorted[0]
 }
