@@ -14,9 +14,13 @@ export default function findPalindrome(digit){
     let palindrome = 0;
     let num1 = max, num2 = max;
 
-    while(num1 <= min && num2 <=min){
+    while(num1 > min && num2 > min){
         let temp = (num1 * num2).toString().split('');
         while(temp.length <2){
+            if(temp.length <2) {
+                palindrome = num1 * num2;
+                break;
+            }
             let first = temp.shift(), last = temp.pop();
 
             if(first !== last) break;
