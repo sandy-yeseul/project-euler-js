@@ -8,8 +8,27 @@
  */
 
 export default function findPalindrome(digit){
-    const palindromeDigit = digit * 2;
+    const max = parseInt(Array(digit).fill(9).join('')),
+    min = parseInt(`1${Array(digit -1).fill(0).join('')}`)
+    
+    let palindrome = 0;
+    let num1 = max, num2 = max;
 
-    const max = parseInt(Array(digit).fill(9).toLocaleString())
-    console.log(Array(digit).fill(9).toLocaleString())
+    while(num1 <= min && num2 <=min){
+        let temp = (num1 * num2).toString().split('');
+        while(temp.length <2){
+            let first = temp.shift(), last = temp.pop();
+
+            if(first !== last) break;
+        }
+        if(palindrome!== 0) break;
+
+        if(num1 !== num2) num1 += -1;
+        else num2 += -1;
+        
+        // 99 * 99
+        // 99 * 98
+        // 98 * 98
+    }
+    return palindrome;
 }
