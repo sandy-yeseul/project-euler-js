@@ -15,17 +15,14 @@ export function findPalindrome(digit){
     let num1 = max, num2 = max;
 
     while(num1 >= min){
-        let temp = (num1 * num2).toString().split('');
-        while(temp.length <2){
-            if(temp.length <2) {
-                palindrome = num1 * num2;
-                break;
-            }
-            let first = temp.shift(), last = temp.pop();
+        let temp = num1 * num2;
 
-            if(first !== last) break;
+        let isItPalindrome = verifyPalindrome(temp)
+        
+        if(isItPalindrome){
+            palindrome = temp;
+            break;
         }
-        if(palindrome!== 0) break;
 
         if(num2 === min) {
             num1 += -1;
