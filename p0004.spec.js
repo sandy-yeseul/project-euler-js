@@ -17,5 +17,7 @@ describe("testin p 4", ()=>{
         const res = findPalindrome(2);
         expect(res).to.be.eq(9009)
     })
-    
+    it("find palindrome should return", ()=>{
+        // expect(findPalindrome(3)).to.be.eq(906609)
+    })
 })
