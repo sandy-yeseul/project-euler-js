@@ -14,7 +14,7 @@ export function findPalindrome(digit){
     let palindrome = 0;
     let num1 = max, num2 = max;
 
-    while(num1 > min){
+    while(num1 >= min){
         let temp = (num1 * num2).toString().split('');
         while(temp.length <2){
             if(temp.length <2) {
@@ -40,13 +40,13 @@ export function verifyPalindrome(num){
     let arr = num.toString().split("");
     let isItPalindrome = false;
 
-    while(arr.length <2){
-        if(arr.length < 2){
-            isItPalindrome = true;
-            break;
-        }
-        let first = arr.shift(), last = arr.pop();
+    while(arr.length >= 1){
+        if(arr.length === 1) isItPalindrome = true;
         
+        let first = arr.shift(), last = arr.pop();
+
+        if(arr.length ===0 && first === last) isItPalindrome = true;
+    
         if(first !== last) break;
     }
     return isItPalindrome;
