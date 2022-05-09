@@ -15,8 +15,9 @@ export function findPalindrome(digit){
     let num1 = max, num2 = max;
     let range = 9;
 
-    
-    while(num1 >= min){
+
+    while(num1 >= min && num2 >= min){
+        console.log(num1, num2)
         let temp = num1 * num2;
 
         let isItPalindrome = verifyPalindrome(temp)
@@ -26,12 +27,12 @@ export function findPalindrome(digit){
             break;
         }
 
-        if(num2 === (range * Math.pow(10, digit))){
-            num1 += -1;
-            num2  -= num1;
-        } 
-        else if(num1 === range * Math.pow(10, digit)) {
+        if(num1 === range * Math.pow(10, (digit -1))) {
             range += -1;
+            num1 += -1;
+            num2 = num1;
+        } 
+        else if(num2 === (range * Math.pow(10, (digit -1)))){
             num1 += -1;
             num2 = num1;
         } 
