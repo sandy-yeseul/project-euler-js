@@ -9,30 +9,21 @@
 
 export function findPalindrome(digit){
     const max = parseInt(Array(digit).fill(9).join('')),
-    min = Math.pow(10, (digit -1))
+    min = Math.pow(10, digit -1)
     
     let palindrome = 0;
     let num1 = max, num2 = max;
     let range = 9;
 
-
     while(num1 >= min && num2 >= min){
-        console.log(num1, num2)
-        let temp = num1 * num2;
+        
+        palindrome = num1 * num2;
 
-        let isItPalindrome = verifyPalindrome(temp)
+        if(verifyPalindrome(palindrome)) break;
 
-        if(isItPalindrome){
-            palindrome = temp;
-            break;
-        }
-
-        if(num1 === range * Math.pow(10, (digit -1))) {
-            range += -1;
-            num1 += -1;
-            num2 = num1;
-        } 
-        else if(num2 === (range * Math.pow(10, (digit -1)))){
+        if(num1 === range * Math.pow(10, digit -1)) range += -1;
+        
+        if(num2 === (range * Math.pow(10, digit -1))){
             num1 += -1;
             num2 = num1;
         } 
