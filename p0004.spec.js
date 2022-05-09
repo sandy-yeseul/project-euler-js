@@ -18,6 +18,6 @@ describe("testin p 4", ()=>{
         expect(res).to.be.eq(9009)
     })
     it("find palindrome should return", ()=>{
-        // expect(findPalindrome(3)).to.be.eq(906609)
+        expect(findPalindrome(3)).to.be.eq(906609)
     })
 })
