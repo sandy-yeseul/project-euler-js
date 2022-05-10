@@ -8,17 +8,25 @@
 */
 
 export function findSmallestMultiple(lastNum){
+    const pmNumbers = getPrimeNumbers(lastNum);
     const pmCount = new Map();
-    for(let i = 1; i<= lastNum; i++){
-        if(i===1) {
+    for(let i = 2; i<= lastNum; i++){
+        if(pmNumbers.includes(i)) {
             pmCount.set(i, 1);
             continue;
         }
+        
+        let num = i;
+        let temp = new Map();
+        while(num !== 1){
+            const pm = pmNumbers.find(n => !(num % n))
 
-        for(let pm of pmCount.keys()){
-            if(i % pm === 0){
+            if(temp.get(pm)){
+                let count = temp.get(pm);
+                temp.set(pm, count++)
+            } else temp.set(pm, 1)
 
-            }
+            num /= pm;
         }
     }
 }
