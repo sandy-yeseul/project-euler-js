@@ -27,11 +27,11 @@ export function findSmallestMultiple(lastNum){
             if(cur > prev) pmCount.set(pm, cur)
         }
     }
-
+    
     for(let pm of pmCount.keys()){
         let count = pmCount.get(pm);
         
-        res = res * pm * count;
+        res = res * Math.pow(pm, count);
     }
 
     return res;
