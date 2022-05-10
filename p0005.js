@@ -21,15 +21,13 @@ export function findSmallestMultiple(lastNum){
         
         let num = i, temp = getPrimeNumberCount(num, pmNumbers)
 
-        for(let [pm, cur] of temp){
+        temp.forEach((cur, pm) => {
             let prev = pmCount.get(pm);
             if(cur > prev) pmCount.set(pm, cur)
-        }
+        })
     }
 
-    for(let [pm, count] of pmCount){
-        res = res * Math.pow(pm, count);
-    }
+    pmCount.forEach((count, pm) => res = res * Math.pow(pm, count))
 
     return res;
 }
