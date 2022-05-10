@@ -7,6 +7,26 @@
 
 */
 
-export function findSmallestMultiple(){
-    
+export function findSmallestMultiple(lastNum){
+    const pmCount = new Map();
+    for(let i = 1; i<= lastNum; i++){
+        if(i===1) {
+            pmCount.set(i, 1);
+            continue;
+        }
+
+        for(let pm of pmCount.keys()){
+            if(i % pm === 0){
+
+            }
+        }
+    }
+}
+export function getPrimeNumbers(lastNum){
+    const primeNumbers = []
+    for(let i = 2; i <= lastNum; i++){
+        if(i===1) primeNumbers.push(i)
+        else if(!primeNumbers.some(n => i%n)) primeNumbers.push(i)
+    }
+    return primeNumbers
 }
