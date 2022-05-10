@@ -17,17 +17,6 @@ export function findSmallestMultiple(lastNum){
         }
         
         let num = i;
-        let temp = new Map();
-        while(num !== 1){
-            const pm = pmNumbers.find(n => !(num % n))
-
-            if(temp.get(pm)){
-                let count = temp.get(pm);
-                temp.set(pm, count++)
-            } else temp.set(pm, 1)
-
-            num /= pm;
-        }
     }
 }
 export function getPrimeNumbers(lastNum){
@@ -37,4 +26,21 @@ export function getPrimeNumbers(lastNum){
         else if(primeNumbers.every(n => i%n)) primeNumbers.push(i)
     }
     return primeNumbers
+}
+export function getPrimeNumberCount(num, pmNumbers){
+    const temp = new Map();
+    while(num !== 1){
+        const pm = pmNumbers.find(n => !(num % n))
+
+        if(temp.get(pm)){
+            let count = temp.get(pm);
+            count ++;
+            temp.set(pm, count)
+        } 
+        else temp.set(pm, 1)
+
+        num /= pm;
+    }
+    
+    return temp;
 }
