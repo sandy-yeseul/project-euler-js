@@ -10,14 +10,31 @@
 export function findSmallestMultiple(lastNum){
     const pmNumbers = getPrimeNumbers(lastNum);
     const pmCount = new Map();
+
+    let res = 1;
+
     for(let i = 2; i<= lastNum; i++){
         if(pmNumbers.includes(i)) {
             pmCount.set(i, 1);
             continue;
         }
         
-        let num = i;
+        let num = i, temp = getPrimeNumberCount(num, pmNumbers)
+
+        for(let pm of temp.keys()){
+            let prev = pmCount.get(pm);
+            let cur = temp.get(pm)
+            if(cur > prev) pmCount.set(pm, cur)
+        }
     }
+
+    for(let pm of pmCount.keys()){
+        let count = pmCount.get(pm);
+        
+        res = res * pm * count;
+    }
+
+    return res;
 }
 export function getPrimeNumbers(lastNum){
     const primeNumbers = []
