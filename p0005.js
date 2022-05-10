@@ -21,21 +21,19 @@ export function findSmallestMultiple(lastNum){
         
         let num = i, temp = getPrimeNumberCount(num, pmNumbers)
 
-        for(let pm of temp.keys()){
+        for(let [pm, cur] of temp){
             let prev = pmCount.get(pm);
-            let cur = temp.get(pm)
             if(cur > prev) pmCount.set(pm, cur)
         }
     }
-    
-    for(let pm of pmCount.keys()){
-        let count = pmCount.get(pm);
-        
+
+    for(let [pm, count] of pmCount){
         res = res * Math.pow(pm, count);
     }
 
     return res;
 }
+
 export function getPrimeNumbers(lastNum){
     const primeNumbers = []
     for(let i = 2; i <= lastNum; i++){
@@ -44,6 +42,7 @@ export function getPrimeNumbers(lastNum){
     }
     return primeNumbers
 }
+
 export function getPrimeNumberCount(num, pmNumbers){
     const temp = new Map();
     while(num !== 1){

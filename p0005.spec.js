@@ -6,7 +6,7 @@ describe("testing for p 5", ()=>{
         expect(findSmallestMultiple(10)).to.be.eq(2520)
     })
     it("should return answer", ()=>{
-        console.log(findSmallestMultiple(20))
+        expect(findSmallestMultiple(20)).to.be.eq(232792560)
     })
 
     it('should return primenumber list', ()=>{
