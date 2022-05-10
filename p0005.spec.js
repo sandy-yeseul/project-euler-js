@@ -13,4 +13,9 @@ describe("testing for p 5", ()=>{
         expect(getPrimeNumbers(10))
         .to.have.deep.members([2, 3, 5, 7])
     })
+
+    it("should return prime number list below 20", ()=>{
+        expect(getPrimeNumbers(20))
+        .to.have.deep.members([2, 3, 5, 7, 11, 13, 17, 19])
+    })
 })

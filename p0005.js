@@ -26,8 +26,7 @@ export function getPrimeNumbers(lastNum){
     const primeNumbers = []
     for(let i = 2; i <= lastNum; i++){
         if(i===2) primeNumbers.push(i)
-        else if(!primeNumbers.every(n => i%n)) primeNumbers.push(i)
+        else if(primeNumbers.every(n => i%n)) primeNumbers.push(i)
     }
-    console.log(primeNumbers)
     return primeNumbers
 }
