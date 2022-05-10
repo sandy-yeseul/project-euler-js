@@ -11,6 +11,6 @@ describe("testing for p 5", ()=>{
 
     it('should return primenumber list', ()=>{
         expect(getPrimeNumbers(10))
-        .to.have.deep.members([1, 2, 3, 5, 7])
+        .to.have.deep.members([2, 3, 5, 7])
     })
 })
