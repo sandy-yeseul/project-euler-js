@@ -19,7 +19,9 @@ export function findDifferenceSumSquare(max){
 }
 
 export function SumNumberOfSquares(max){
-
+    let sum = 0;
+    let arr = new Array(max).fill(0).forEach((v, i) => sum += Math.pow((i+1), 2))
+    return sum;
 }
 
 export function SquareSumOfNumbers(max){
