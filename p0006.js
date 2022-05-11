@@ -23,5 +23,10 @@ export function SumNumberOfSquares(max){
 }
 
 export function SquareSumOfNumbers(max){
-    
+    let sum = 0;
+    for(let i =1; i<=max; i++){
+        sum += i;
+    }
+
+    return Math.pow(sum, 2)
 }
