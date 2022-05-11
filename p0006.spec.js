@@ -1,9 +1,9 @@
 import { expect } from "chai"
-import { findDifferenceSumSquare, SquareSumOfNumbers, SumNumberOfSquares } from "./p0006.js"
+import { findDiffSumSquare, SquareSumOfNumbers, SumNumberOfSquares } from "./p0006.js"
 
 describe("testing p 6", ()=>{
     it("should return 3025 - 385", ()=>{
-        const res = findDifferenceSumSquare(10)
+        const res = findDiffSumSquare(10)
         expect(res).to.be.eq(2640)
     })
 
@@ -12,5 +12,9 @@ describe("testing p 6", ()=>{
     })
     it("should return 3025 - testing square of sums", ()=>{
         expect(SquareSumOfNumbers(10)).to.be.eq(3025)
+    })
+
+    it("should return answer", ()=>{
+        expect(findDiffSumSquare(100)).to.be.eq(25164150)
     })
 })

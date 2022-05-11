@@ -14,8 +14,8 @@
  * natural numbers and the square of the sum.
 */
 
-export function findDifferenceSumSquare(max){
-
+export function findDiffSumSquare(max){
+    return SquareSumOfNumbers(max) - SumNumberOfSquares(max)
 }
 
 export function SumNumberOfSquares(max){
@@ -25,10 +25,10 @@ export function SumNumberOfSquares(max){
 }
 
 export function SquareSumOfNumbers(max){
-    let sum = 0;
-    for(let i =1; i<=max; i++){
-        sum += i;
-    }
-
+    const sum = SumArrNumbers(new Array(max).fill(0).map((v, i) => i+1))
     return Math.pow(sum, 2)
+}
+
+export function SumArrNumbers(arr){
+    return arr.reduce((prev, cur) => prev + cur)
 }
