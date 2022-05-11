@@ -19,16 +19,15 @@ export function findDiffSumSquare(max){
 }
 
 export function SumNumberOfSquares(max){
-    let sum = 0;
-    let arr = new Array(max).fill(0).forEach((v, i) => sum += Math.pow((i+1), 2))
-    return sum;
+    const arr = new Array(max).fill(0).map((v, i) => Math.pow(i + 1, 2))
+    return SumArrElems(arr);
 }
 
 export function SquareSumOfNumbers(max){
-    const sum = SumArrNumbers(new Array(max).fill(0).map((v, i) => i+1))
+    const sum = SumArrElems(new Array(max).fill(0).map((v, i) => i+1))
     return Math.pow(sum, 2)
 }
 
-export function SumArrNumbers(arr){
+export function SumArrElems(arr){
     return arr.reduce((prev, cur) => prev + cur)
 }
