@@ -5,15 +5,13 @@
  * What is the 10 001st prime number?
  */
 
-import { getPrimeNumbers } from "./p0005";
-
 export function findNthPrimeNumber(nth){
-    let pn = 2;
+    let pn = 1;
     const primeNumbers = [];
 
     while(primeNumbers.length < nth){
+        pn ++
         if(primeNumbers.every(n => pn % n)) primeNumbers.push(pn);
-        pn++;
     }
 
     return pn;
