@@ -6,7 +6,7 @@ describe("testing p 7", ()=>{
         expect(findNthPrimeNumber(6)).to.be.eq(13)
     })
 
-    it("should return answer", ()=>{
-        console.log(findNthPrimeNumber(10001))
+    it("should return answer = 104743", ()=>{
+        expect(findNthPrimeNumber(10001)).to.be.eq(104743)
     })
 })

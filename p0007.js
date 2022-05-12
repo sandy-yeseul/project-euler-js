@@ -6,13 +6,15 @@
  */
 
 export function findNthPrimeNumber(nth){
+    console.time(`p0007: ${nth}`)
     let pn = 1;
-    const primeNumbers = [];
+    const primeNumbers = [2];
 
     while(primeNumbers.length < nth){
-        pn ++
+        pn += 2
         if(primeNumbers.every(n => pn % n)) primeNumbers.push(pn);
     }
 
+    console.timeEnd(`p0007: ${nth}`)
     return pn;
 }
