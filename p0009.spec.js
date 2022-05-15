@@ -29,4 +29,8 @@ describe('testing p 9', () => {
     it("should return false for 7, 8, 9", ()=>{
         expect(validatePythagoren(7, 8, 9)).to.be.false;
     })
+
+    it("should return false for 24, 7, 25", ()=>{
+        expect(validatePythagoren(24, 7, 25)).to.be.false;
+    })
 });

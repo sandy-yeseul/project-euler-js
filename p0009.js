@@ -25,5 +25,7 @@ export function findPythagoreanTriplet(sum){
 }
 
 export function validatePythagoren(a, b, c){
-    return Math.pow(a, 2) + Math.pow(b, 2) === Math.pow(c, 2)
+    if(a >= c || b >= c) return false;
+    if(a >= b) return false;
+    return Math.pow(a, 2) + Math.pow(b, 2) === Math.pow(c, 2) && a < b < c
 }
