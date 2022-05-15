@@ -7,6 +7,7 @@ describe('testing p 8', () => {
     })
     
     it('should return answer', ()=>{
-        console.log(findLargestProductInSeries(13))
+        expect(findLargestProductInSeries(13))
+        .to.be.eq(23514624000)
     })
 });
