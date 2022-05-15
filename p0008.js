@@ -50,16 +50,18 @@ export function findLargestProductInSeries(digit){
     84580156166097919133875499200524063689912560717606
     05886116467109405077541002256983155200055935729725
     71636269561882670428252483600823257530420752963450`
-    .split('')
+    .split('\n').join('').split('')
 
-    let product = 0;
+    console.log(series.length)
+
+    let largestProduct = 0;
 
     for(let i = 0; i<=series.length - digit; i++){
-        let temp = series.slice(i, i + digit)
-        .reduce((prev, cur) => parseInt(prev) * parseInt(cur), 1)
+        let product = series.slice(i, i + digit)
+        .reduce((prev, cur) => parseInt(prev) * parseInt(cur))
         
-        if(temp > product) product = temp;
+        if(product > largestProduct) largestProduct = product;
     }
 
-    return product;
+    return largestProduct;
 }
