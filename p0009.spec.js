@@ -6,6 +6,10 @@ describe('testing p 9', () => {
         expect(findPythagoreanTriplet(12)).to.be.eq(60)
     })
 
+    it('should return answer', ()=>{
+        console.log(findPythagoreanTriplet(1000))
+    })
+
     it("should return 480 for 6, 8, 10", ()=>{
         expect(findPythagoreanTriplet(24)).to.be.eq(480)
     })

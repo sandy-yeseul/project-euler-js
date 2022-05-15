@@ -31,20 +31,6 @@ export function findPythagoreanTriplet(sum){
     }
 
     return product;
-    /**
-     * 12
-     * a < b < c
-     * 
-     * 1 2 9
-     * 1 3 8
-     * 1 4 7
-     * 1 5 6
-     * 
-     * 2 3 7
-     * 2 4 6
-     * 
-     * 3 4 5
-     */
 }
 
 export function validatePythagoren(a, b, c){
