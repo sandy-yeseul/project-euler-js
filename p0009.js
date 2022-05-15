@@ -12,8 +12,10 @@ Find the product abc.
 export function findPythagoreanTriplet(sum){
     let stop = false;
     let product = 1;
-    for(let a=1; a< sum; a++){
 
+    let a = 1;
+
+    while(!stop){
         for(let b=a+1; b< sum; b++){
             let c = sum - (a+b);
             if(c <= b) break;
@@ -25,8 +27,7 @@ export function findPythagoreanTriplet(sum){
                 break;
             }
         }
-
-        if(stop === true) break;
+        a++;
     }
 
     return product;
