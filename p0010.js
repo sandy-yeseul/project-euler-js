@@ -37,11 +37,11 @@ export function verifyPrimeFactor(n){
         const r = Math.floor(Math.sqrt(n))
         let f = 5;
         while(f <= r){
-            if(f % n === 0) {
+            if(n % f === 0) {
                 isPrimeFactor = false;
                 break;
             }
-            else if(f % (n+2) === 0) {
+            else if(n % (f+2) === 0) {
                 isPrimeFactor = false;
                 break;
             }
