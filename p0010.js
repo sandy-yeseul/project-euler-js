@@ -15,20 +15,33 @@ export function findPrimeSum(max){
     let pn1 = num -1, pn2 = num +1
 
     while(pn1 <= max){
-        if(primeNumbers.find(n => pn1 % n === 0) === undefined) {
-            primeNumbers.push(pn1);
-            sum += pn1;
-        }
+        if(verifyPrimeFactor(pn1)) sum += pn1;
         if(pn2 > max) break;
-        if(primeNumbers.find(n => pn2 % n === 0) === undefined){
-            primeNumbers.push(pn2);
-            sum += pn2;
-        }
-        
+        if(verifyPrimeFactor(pn2)) sum += pn2;
         
         pn1 +=6, pn2 +=6;
     }
 
     console.timeEnd(`p 10: ${max}`)
     return sum;
+}
+
+export function verifyPrimeFactor(n){
+    let isPrimeFactor = true;
+    if(n === 1) isPrimeFactor = false;
+    else if(n < 4) isPrimeFactor = true;
+    else if(n % 2 === 0) isPrimeFactor = false;
+    else if(n < 9) return isPrimeFactor = true;
+    else if(n % 3 === 0) isPrimeFactor = false;
+    else {
+        let square = Math.floor(Math.sqrt(n))
+        while(square > 1){
+            if(n % square === 0){
+                isPrimeFactor = false;
+                break;
+            }
+            square--;
+        }
+    }
+    return isPrimeFactor;
 }
