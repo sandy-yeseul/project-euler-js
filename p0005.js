@@ -35,13 +35,17 @@ export function findSmallestMultiple(lastNum){
 export function getPrimeNumbers(lastNum){
     const primeNumbers = [2, 3]
     let num = 6;
-    while(num <= lastNum){
-        let pn1 = num -1, pn2 = num +1;
+    let pn1 = num -1, pn2 = num +1;
+
+    while(pn1 <= lastNum){
 
         if(primeNumbers.find(n => pn1 % n ===0)===undefined) primeNumbers.push(pn1)
+
+        if(pn2 > lastNum) break;
+
         if(primeNumbers.find(n => pn2 % n ===0)===undefined) primeNumbers.push(pn2)
 
-        num +=6;
+        pn1 +=6, pn2 +=6;
     }
     return primeNumbers
 }
