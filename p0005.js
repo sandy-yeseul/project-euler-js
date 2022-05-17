@@ -34,9 +34,12 @@ export function findSmallestMultiple(lastNum){
 
 export function getPrimeNumbers(lastNum){
     const primeNumbers = []
-    for(let i = 2; i <= lastNum; i++){
-        if(i===2) primeNumbers.push(i)
-        else if(primeNumbers.every(n => i%n)) primeNumbers.push(i)
+    let pn = 1;
+    while(pn <= lastNum){
+        if(pn===1) primeNumbers.push(2)
+        else if(primeNumbers.every(n => pn%n)) primeNumbers.push(pn);
+
+        pn+=2;
     }
     return primeNumbers
 }
@@ -57,4 +60,10 @@ export function getPrimeNumberCount(num, pmNumbers){
     }
     
     return temp;
+}
+
+export function isPrimeNumber(num){
+    if(num === 1) return false;
+    if(num < 4) return true;
+    if(num % 2 === 0 || num % 3 ===0) return false;
 }
