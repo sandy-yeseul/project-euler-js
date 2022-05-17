@@ -34,13 +34,18 @@ export function verifyPrimeFactor(n){
     else if(n < 9) return isPrimeFactor = true;
     else if(n % 3 === 0) isPrimeFactor = false;
     else {
-        let square = Math.floor(Math.sqrt(n))
-        while(square > 1){
-            if(n % square === 0){
+        const r = Math.floor(Math.sqrt(n))
+        let f = 5;
+        while(f <= r){
+            if(f % n === 0) {
                 isPrimeFactor = false;
                 break;
             }
-            square--;
+            else if(f % (n+2) === 0) {
+                isPrimeFactor = false;
+                break;
+            }
+            f +=6;
         }
     }
     return isPrimeFactor;
