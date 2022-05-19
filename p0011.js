@@ -53,56 +53,56 @@ export function findLargestProductInGrid(count){
     
     const _length = grid.length
 
-    let maxSum = 0;
+    let maxProduct = 0;
 
     for(let [i, row] of grid.entries()){
         for(let [j, col] of row.entries()){
             // horizontal
             if(j+count <= _length){
-                let temp = getSumOfSomeElems(row, j, count)
-                maxSum = getLargerNum(temp, maxSum)
+                let temp = getProductOfSomeElems(row, j, count)
+                maxProduct = getLargerNum(temp, maxProduct)
             }
 
             // vertical
             if(i+count <= _length){
-                let temp = getSumOfSomeElems([
+                let temp = getProductOfSomeElems([
                     grid[i][j],
                     grid[i+1][j],
                     grid[i+2][j],
                     grid[i+3][j]
                 ], 0, count)
-                maxSum = getLargerNum(temp, maxSum)
+                maxProduct = getLargerNum(temp, maxProduct)
             }
 
             // diagonally -right
             if(j+count <= _length && i+count <=_length){
-                let temp = getSumOfSomeElems([
+                let temp = getProductOfSomeElems([
                     grid[i][j],
                     grid[i+1][j+1],
                     grid[i+2][j+2],
                     grid[i+3][j+3]
                 ], 0, count)
-                maxSum = getLargerNum(temp, maxSum)
+                maxProduct = getLargerNum(temp, maxProduct)
             }
 
             // diagonally - left
             if(j-count >= -1 && i+count <= _length){
-                let temp = getSumOfSomeElems([
+                let temp = getProductOfSomeElems([
                     grid[i][j],
                     grid[i+1][j-1],
                     grid[i+2][j-2],
                     grid[i+3][j-3]
                 ], 0, count)
 
-                maxSum = getLargerNum(temp, maxSum)
+                maxProduct = getLargerNum(temp, maxProduct)
             }
         }
     }
-    return maxSum
+    return maxProduct
 }
 
-export function getSumOfSomeElems(arr, index, count){
-    return arr.slice(index, index+count).reduce((prev, cur) => parseInt(prev) + parseInt(cur))
+export function getProductOfSomeElems(arr, index, count){
+    return arr.slice(index, index+count).reduce((prev, cur) => parseInt(prev) * parseInt(cur), 1)
 }
 export function getLargerNum(temp, sum){
     return Math.max(temp, sum)
