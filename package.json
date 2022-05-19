@@ -5,7 +5,7 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "test": "mocha p0010.spec.js",
+    "test": "mocha p0011.spec.js",
     "start": "node main.js"
   },
   "repository": {
