@@ -55,24 +55,56 @@ export function findLargestProductInGrid(count){
 
     let maxSum = 0;
 
-    for(let [row, i] of grid.entries()){
+    for(let [i, row] of grid.entries()){
         for(let j in row){
             // horizontal
             if(j+count <= _length){
-                let temp = row.slice(j, j+count).reduce((prev, cur) => prev+cur)
-                if(temp > maxSum) maxSum = temp
+                let temp = getSumOfSomeElems(row, j, count)
+                maxSum = setLargerSum(temp, maxSum)
             }
 
             // vertical
+            if(i+count <= _length){
+                let temp = getSumOfSomeElems([
+                    grid[i][j],
+                    grid[i+1][j],
+                    grid[i+2][j],
+                    grid[i+3][j]
+                ], 0, count)
+                maxSum = setLargerSum(temp, maxSum)
+            }
 
             // diagonally -right
+            if(j+count <= _length && i+count <=_length){
+                let temp = getSumOfSomeElems([
+                    grid[i][j],
+                    grid[i+1][j+1],
+                    grid[i+2][j+2],
+                    grid[i+3][j+3]
+                ], 0, count)
+                
+                maxSum = setLargerSum(temp, maxSum)
+            }
 
             // diagonally - left
+            if(j-count >= -1 && i+count <= _length){
+                let temp = getSumOfSomeElems([
+                    grid[i][j],
+                    grid[i+1][j-1],
+                    grid[i+2][j-2],
+                    grid[i+3][j-3]
+                ], 0, count)
+
+                maxSum = setLargerSum(temp, maxSum)
+            }
         }
     }
-
+    return maxSum
 }
 
 export function getSumOfSomeElems(arr, index, count){
     return arr.slice(index, index+count).reduce((prev, cur) => prev + cur)
+}
+export function setLargerSum(temp, sum){
+    return Math.max(temp, sum)
 }
