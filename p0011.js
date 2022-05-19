@@ -60,7 +60,7 @@ export function findLargestProductInGrid(count){
             // horizontal
             if(j+count <= _length){
                 let temp = getSumOfSomeElems(row, j, count)
-                maxSum = setLargerSum(temp, maxSum)
+                maxSum = getLargerNum(temp, maxSum)
             }
 
             // vertical
@@ -71,7 +71,7 @@ export function findLargestProductInGrid(count){
                     grid[i+2][j],
                     grid[i+3][j]
                 ], 0, count)
-                maxSum = setLargerSum(temp, maxSum)
+                maxSum = getLargerNum(temp, maxSum)
             }
 
             // diagonally -right
@@ -83,7 +83,7 @@ export function findLargestProductInGrid(count){
                     grid[i+3][j+3]
                 ], 0, count)
                 
-                maxSum = setLargerSum(temp, maxSum)
+                maxSum = getLargerNum(temp, maxSum)
             }
 
             // diagonally - left
@@ -95,7 +95,7 @@ export function findLargestProductInGrid(count){
                     grid[i+3][j-3]
                 ], 0, count)
 
-                maxSum = setLargerSum(temp, maxSum)
+                maxSum = getLargerNum(temp, maxSum)
             }
         }
     }
@@ -103,8 +103,8 @@ export function findLargestProductInGrid(count){
 }
 
 export function getSumOfSomeElems(arr, index, count){
-    return arr.slice(index, index+count).reduce((prev, cur) => prev + cur)
+    return arr.slice(index, index+count).reduce((prev, cur) => parseInt(prev) + parseInt(cur))
 }
-export function setLargerSum(temp, sum){
+export function getLargerNum(temp, sum){
     return Math.max(temp, sum)
 }
