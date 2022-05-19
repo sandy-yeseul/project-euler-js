@@ -60,6 +60,7 @@ export function findLargestProductInGrid(count){
             // horizontal
             if(j+count <= _length){
                 let temp = getSumOfSomeElems(row, j, count)
+                console.log(temp)
                 maxSum = getLargerNum(temp, maxSum)
             }
 
