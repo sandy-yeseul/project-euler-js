@@ -56,7 +56,7 @@ export function findLargestProductInGrid(count){
     let maxSum = 0;
 
     for(let [i, row] of grid.entries()){
-        for(let j in row){
+        for(let [j, col] of row.entries()){
             // horizontal
             if(j+count <= _length){
                 let temp = getSumOfSomeElems(row, j, count)
@@ -82,12 +82,6 @@ export function findLargestProductInGrid(count){
                     grid[i+2][j+2],
                     grid[i+3][j+3]
                 ], 0, count)
-                console.log([
-                    grid[i][j],
-                    j+1,
-                    grid[i+2][j],
-                    grid[i+3][j]
-                ])
                 maxSum = getLargerNum(temp, maxSum)
             }
 
