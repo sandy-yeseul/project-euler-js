@@ -14,4 +14,8 @@ describe('testing p 12', () => {
         expect(getDivisors(6))
         .to.have.deep.members([1, 2, 3, 6])
     })
+    it("should return 6 length of arr for 28", ()=>{
+        expect(getDivisors(28))
+        .to.be.lengthOf(6)
+    })
 });
