@@ -38,10 +38,15 @@ export function findHighlyDivisibleTriangularNum(divisorsNum){
 }
 
 export function getDivisors(num){
+    console.time(`get divisors time ${num}`)
     const divisors = [];
-    for(let i=1; i<=num; i++){
-        if(num % i === 0) divisors.push(i)
+    let divisor = 1;
+    const half = num / 2;
+    while(divisor <= half){
+        if(num % i === 0) divisors.push(i, num / i)
+        i++;
     }
+    console.timeEnd(`get divisors time ${num}`)
     return divisors;
 }
 
