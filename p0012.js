@@ -44,3 +44,16 @@ export function getDivisors(num){
     }
     return divisors;
 }
+
+export function getTriangleNums(lastNum){
+    let i = 1;
+    let triangleNum = i;
+
+    while(i<=lastNum){
+        let divisors = getDivisors(triangleNum)
+        console.log(`${i}: ${triangleNum}, [${divisors}]`)
+
+        i++;
+        triangleNum += i;
+    }
+}
