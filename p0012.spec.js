@@ -23,8 +23,9 @@ describe('testing p 12', () => {
         expect(getDivisors(28))
         .to.be.lengthOf(6)
     })
-    it("should return ", ()=>{
-        console.log(getDivisors(4560).length)
+    it("should return 40 length of 4560 divisors", ()=>{
+        expect(getDivisors(4560))
+        .to.be.lengthOf(40)
     })
 
     it('should test get triangle nums', ()=>{

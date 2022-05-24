@@ -41,10 +41,13 @@ export function getDivisors(num){
     console.time(`get divisors time ${num}`)
     const divisors = [];
     let divisor = 1;
-    const half = num / 2;
-    while(divisor <= half){
-        if(num % i === 0) divisors.push(i, num / i)
-        i++;
+    let threshold = num;
+    while(divisor < threshold){
+        if(num % divisor === 0) {
+            threshold = num / divisor;
+            divisors.push(divisor, threshold)
+        }
+        divisor++;
     }
     console.timeEnd(`get divisors time ${num}`)
     return divisors;
