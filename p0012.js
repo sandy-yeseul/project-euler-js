@@ -38,7 +38,6 @@ export function findHighlyDivisibleTriangularNum(divisorsNum){
 }
 
 export function getDivisors(num){
-    console.time(`get divisors time ${num}`)
     const divisors = [];
     let divisor = 1;
     let threshold = num;
@@ -49,7 +48,6 @@ export function getDivisors(num){
         }
         divisor++;
     }
-    console.timeEnd(`get divisors time ${num}`)
     return divisors;
 }
 

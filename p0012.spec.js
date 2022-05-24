@@ -12,7 +12,7 @@ describe('testing p 12', () => {
     })
 
     it("shoudl return answer", ()=>{
-        // console.log(findHighlyDivisibleTriangularNum(500))
+        console.log(findHighlyDivisibleTriangularNum(500))
     })
 
     it("should return 1, 2, 3, 6 for 6", ()=>{
