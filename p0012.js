@@ -25,3 +25,11 @@ What is the value of the first triangle number to have over five hundred divisor
 export function findHighlyDivisibleTriangularNum(divisors){
     
 }
+
+export function getDivisors(num){
+    const divisors = [];
+    for(let i=1; i<=num; i++){
+        if(num % i === 0) divisors.push(i)
+    }
+    return divisors;
+}
