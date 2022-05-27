@@ -105,7 +105,7 @@ export function sumLarge(){
 72107838435069186155435662884062257473692284509516
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690
-`.split('\n').reduce((prev, cur) => parseInt(prev) + parseInt(cur), 0)
+`.split('\n').reduce((prev, cur) => Number(prev) + Number(cur), 0)
 
 return sum.toString().substring(0, 11)
 
